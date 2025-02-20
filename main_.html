@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chciken Words</title>
+    <title>Chicken Words</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -16,6 +16,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="container">
@@ -39,21 +40,56 @@
       <!-- Main Content of Chicken Words -->
       <div class="main-content">
         <div class="countdown-container">
-          <div id="counter" class="counter">0</div>
+          <div id="counter" class="counter">60</div>
         </div>
-        <div id="type-content" class="type-content">
-          should open way make what form into develop child now because lead
-          program mean they present good state word since one also of with one
-        </div>
+        <!-- content or words to test your typing speed :) -->
+        <div id="type-content" class="type-content"></div>
 
         <div class="input-container">
-          <input type="text" placeholder="Type here"/>
-          <button onclick="startTimer()">
+          <input id="type-input" type="text" placeholder="start typing here ..." />
+          <button onclick="resetGame()">
             <div><i class="fa fa-refresh"></i></div>
           </button>
         </div>
       </div>
 
+      <!-- Typing Stats Table -->
+      <div id="stats">
+        <table border="1">
+          <tr>
+            <th>Metric</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>Words Per Minute (WPM)</td>
+            <td id="wpm">0</td>
+          </tr>
+          <tr>
+            <td>Accuracy (%)</td>
+            <td id="accuracy">0%</td>
+          </tr>
+          <tr>
+            <td>Error Rate (%)</td>
+            <td id="error-rate">0%</td>
+          </tr>
+          <tr>
+            <td>Total Words Typed</td>
+            <td id="total-words">0</td>
+          </tr>
+          <tr>
+            <td>Time Taken (seconds)</td>
+            <td id="time-taken">0</td>
+          </tr>
+          <tr>
+            <td>Keystrokes per Minute (KPM)</td>
+            <td id="kpm">0</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="stats">
+        <canvas id="statsChart"></canvas>
+      </div>
       <!-- Footer of Chicken Words -->
       <div class="footer"></div>
     </div>

@@ -1,8 +1,8 @@
 body {
   font-size: 1.1rem;
-  font-family: "Ubuntu", serif;
+  font-family: "Roboto", serif;
   font-weight: 400;
-  background-color: #0F0F0F;
+  background-color: #0f0f0f;
   color: #ffffff;
 }
 
@@ -32,6 +32,11 @@ a {
   color: #ffffff;
 }
 
+.nav-items li,
+a:hover {
+  color: #ff7519;
+}
+
 .chicken-logo-container {
   display: flex;
   justify-content: center;
@@ -47,12 +52,14 @@ a {
 .chicken-logo-text {
   font-size: 2.1rem;
   font-style: italic;
+  font-weight: 500;
 }
 
 /* Main content of Chicken Words styling */
 .main-content {
   max-width: 750px;
   margin: 0 auto;
+  margin-bottom: 3rem;
 }
 
 .type-content {
@@ -60,7 +67,7 @@ a {
   padding: 1rem;
   line-height: 2rem;
   font-size: 1.3rem;
-  background-color: #272829;
+  background-color: #1e1e1e;
   margin-bottom: 1rem;
 }
 
@@ -74,7 +81,7 @@ a {
   border-radius: 0.3rem;
   margin-right: 0.8rem;
   border: none;
-  background-color: #272829;
+  background-color: #1e1e1e;
   color: #ffffff;
   font-size: 1.3rem;
 }
@@ -83,7 +90,7 @@ a {
   width: 15%;
   border-radius: 0.2rem;
   border: none;
-  background-color: #6439FF;
+  background-color: #6439ff;
   color: #ffffff;
 }
 
@@ -97,7 +104,91 @@ a {
 }
 
 .counter {
-  font-size: 6rem;
-  color: #FAF7F0;
+  font-size: 2.5rem;
+  color: #faf7f0;
   padding: 2rem;
+}
+
+.correct-word {
+  color: #49a875;
+}
+
+.incorrect-word {
+  color: #f58d37;
+}
+
+.highlight {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#stats {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+table {
+  width: 100%;
+  max-width: 750px;
+  border-collapse: collapse;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+th {
+  background-color: #292929;
+  font-weight: bold;
+}
+
+td {
+  font-size: 16px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td#time-taken,
+td#wpm,
+td#accuracy,
+td#error-rate,
+td#total-words,
+td#kpm {
+  font-weight: bold;
+  text-align: center;
+  color: #00c853;
+}
+
+td#accuracy,
+td#error-rate {
+  color: #ff9800;
+}
+
+/* Hover effect */
+tr:hover {
+  background-color: #333333;
+  transition: 0.3s;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+}
+
+#statsChart {
+  width: 100%;
+  max-width: 750px;
+  border-collapse: collapse;
+  overflow: hidden;
 }

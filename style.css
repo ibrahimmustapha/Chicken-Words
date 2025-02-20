@@ -37,6 +37,19 @@ a:hover {
   color: #ff7519;
 }
 
+@media screen and (max-width: 500px) {
+  body {
+    margin: 0.8rem;
+  }
+
+  .nav-items {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;    
+    margin-bottom: 2rem;
+  }
+}
+
 .chicken-logo-container {
   display: flex;
   justify-content: center;
@@ -104,7 +117,7 @@ a:hover {
 }
 
 .counter {
-  font-size: 2.5rem;
+  font-size: 5rem;
   color: #faf7f0;
   padding: 2rem;
 }

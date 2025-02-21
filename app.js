@@ -23,8 +23,6 @@ async function preloadWords() {
 async function getRandomWords() {
   words = preloadedWords.length ? preloadedWords : await fetchWords();
   currentWordIndex = 0;
-  correctWords = 0;
-  totalWordsTyped = 0;
   updateWordDisplay();
   preloadWords(); // Preload next set of words
   updateStats(); // Reset stats display

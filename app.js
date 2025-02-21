@@ -71,9 +71,7 @@ function startTimer() {
         document.getElementById("type-input").value = ""; // set the value of the input to empty ("") after timeout
         document.getElementById("type-input").disabled = true; // disable input after timeout
         setTimeout(
-          () =>
-            (document.getElementById("counter").textContent =
-              "Done! 🎯✅"),
+          () => (document.getElementById("counter").textContent = "Done! 🎯✅"),
           100
         );
         updateStats(); // Update stats after game ends
@@ -209,4 +207,28 @@ document.addEventListener("DOMContentLoaded", async function () {
         checkCorrectWord();
       }
     });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  // Check stored theme preference
+  if (localStorage.getItem("theme") === "light") {
+    body.classList.add("light-mode");
+    themeToggleBtn.innerHTML = `<i class="fa-solid fa-bolt-lightning"></i>`;
+  }
+
+  themeToggleBtn.addEventListener("click", function () {
+    body.classList.toggle("light-mode");
+
+    // Change icon and store preference
+    if (body.classList.contains("light-mode")) {
+      themeToggleBtn.innerHTML = `<i class="fa-solid fa-bolt-lightning"></i>`;
+      localStorage.setItem("theme", "light");
+    } else {
+      themeToggleBtn.innerHTML = `<i class="fa-solid fa-circle-half-stroke"></i>`;
+      localStorage.setItem("theme", "dark");
+    }
+  });
 });

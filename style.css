@@ -21,6 +21,7 @@ body {
 .nav-items {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
   list-style-type: none;
 }
@@ -45,14 +46,13 @@ a:hover {
   .nav-items {
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     margin-bottom: 2rem;
   }
 
   .counter {
     font-size: 6rem;
   }
-  
 }
 
 .chicken-logo-container {
@@ -112,8 +112,8 @@ a:hover {
   color: #ffffff;
 }
 
-.fa-refresh {
-  font-size: 40px;
+.fa-rotate-right {
+  font-size: 1.5rem;
 }
 
 .countdown-container {
@@ -209,4 +209,75 @@ tr:hover {
   max-width: 750px;
   border-collapse: collapse;
   overflow: hidden;
+}
+
+/* Theme changes */
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #ffffff;
+  transition: color 0.3s ease-in-out;
+}
+
+#theme-toggle:active {
+  transform: rotate(360deg);
+}
+
+/* Light mode button icon color */
+.light-mode #theme-toggle {
+  color: #000000;
+}
+
+.light-mode th, td {
+  border-bottom: 1px solid #dad6d6;
+}
+
+
+/* Light Mode */
+.light-mode {
+  background-color: #ffffff;
+  color: #0f0f0f;
+}
+
+/* Light Mode Table */
+.light-mode table {
+  background-color: #f9f9f9;
+  color: #000;
+  box-shadow: none;
+  border: 2px solid black;
+  box-shadow: 0 4px 10px rgba(170, 170, 170, 0.5);
+}
+
+.light-mode .counter,
+.light-mode .nav-items li a {
+  color: #000;
+}
+
+.light-mode .type-content,
+.light-mode #type-input {
+  background-color: #f5f7f8;
+  color: #524b4b;
+}
+
+.light-mode tr:hover {
+  background-color: #f0f0f0;
+  transition: 0.3s;
+}
+
+.light-mode th {
+  background-color: #e6e8e9;
+}
+
+.light-mode td#accuracy,
+.light-mode td#error-rate {
+  color: #ff5722;
+}
+
+.light-mode td#time-taken,
+.light-mode td#wpm,
+.light-mode td#total-words,
+.light-mode td#kpm {
+  color: #2e7d32;
 }

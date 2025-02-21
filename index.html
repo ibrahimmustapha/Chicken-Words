@@ -13,7 +13,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <script src="./app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -32,6 +32,7 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Login</a></li>
           <li><a href="#">Sign Up</a></li>
+          <li id="theme-toggle"><i class="fa-solid fa-circle-half-stroke"></i></li>
         </ul>
       </div>
 
@@ -44,9 +45,13 @@
         <div id="type-content" class="type-content"></div>
 
         <div class="input-container">
-          <input id="type-input" type="text" placeholder="start typing here ..." />
+          <input
+            id="type-input"
+            type="text"
+            placeholder="start typing here ..."
+          />
           <button onclick="resetGame()">
-            <div><i class="fa fa-refresh"></i></div>
+            <div><i class="fa-solid fa-rotate-right"></i></div>
           </button>
         </div>
       </div>
